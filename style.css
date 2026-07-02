@@ -1,0 +1,714 @@
+/* Đưa mọi thông số căn lề về 0 để tránh xung đột trình duyệt */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #faf5ec; /* Nền xám để làm nổi bật thanh Header màu trắng */
+    font-family: Arial, Helvetica, sans-serif; /* Font cơ bản nhất, máy nào cũng có */
+}
+
+/* Khung bọc ngoài cùng của Header */
+.header-wrapper {
+    background-color: #faf5ec;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+    text-align: center; /* Hỗ trợ căn giữa các khối inline-block */
+}
+
+/* Khung giới hạn chiều ngang nội dung */
+.header-inside {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left; /* Đưa text bên trong về lại lề trái */
+}
+
+/* Định dạng khối LOGO */
+.header-logo {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.header-logo a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.logo-the {
+    display: block;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: #cb9a4a;
+    font-style: italic;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.logo-cocoon {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #cb9a4a;
+    letter-spacing: 1px;
+    line-height: 0.9;
+    text-transform: lowercase;
+}
+
+.logo-origin {
+    display: block;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 11px;
+    color: #cb9a4a;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+/* Định dạng khối MENU CHÍNH */
+.header-menu {
+    display: inline-block;
+    width: 58%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.header-menu ul {
+    list-style: none;
+}
+
+.header-menu ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.header-menu ul li a {
+    font-size: 13px;
+    font-weight: bold;
+    color: #d29e39;
+    text-decoration: none;
+    letter-spacing: 1px;
+    /* Hiệu ứng mượt khi di chuột */
+    transition: color 0.2s ease; 
+}
+
+.header-menu ul li a:hover {
+    color: #e9be7a; /* Đổi sang màu đen tuyền khi di chuột */
+}
+
+/* Định dạng khối CHỨC NĂNG BÊN PHẢI */
+.header-right {
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.header-right .btn-cart-classic {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;         /* Chữ màu trắng chuẩn */
+    background-color: #1a1613; /* Màu đen nâu mộc mạc */
+    text-decoration: none;  /* Bỏ hoàn toàn gạch chân */
+    padding: 10px 20px;     /* Khoảng cách đệm tạo hình hộp chữ nhật */
+    border-radius: 2px;     /* Góc vuông hơi bo nhẹ cực kỳ tối giản */
+    letter-spacing: 0.5px;  /* Giãn chữ nhẹ cho sang trọng */
+    transition: background 0.2s ease;
+}
+
+.header-right .btn-cart:hover {
+    background-color: #444444;
+}
+
+/* --- ĐỊNH DẠNG CHUNG CỦA TOÀN BỘ FOOTER --- */
+.cocoon-total-footer {
+    width: 100%;
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.relative-box {
+    position: relative;
+}
+
+/* ========================================== */
+/* STYLING PHẦN 1: NỀN KEM NHẠT (IMAGE_D6DC60.PNG) */
+.footer-section-top {
+    background-color: #faf6f0; /* Màu nền kem của ảnh trên */
+    padding: 60px 0 80px 0;
+    color: #201c19;
+}
+
+/* Cột bên trái: Khối đăng ký email */
+.subscribe-block {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    text-align: left;
+}
+
+.subscribe-block h2 {
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    color: #201c19;
+}
+
+.email-input-box {
+    position: relative;
+    width: 85%;
+    border-bottom: 1px solid #d4a359;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.email-input-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 90%;
+    font-size: 15px;
+    color: #201c19;
+}
+
+.email-input-box input::placeholder {
+    color: #c4b5a3;
+}
+
+/* SỬA CHÚT XỈU TẠI ĐÂY: Reset các thuộc tính của button để nút bấm mượt mà */
+.arrow-submit {
+    position: absolute;
+    right: 5px;
+    top: 50%;                 /* Căn giữa nút theo chiều dọc */
+    transform: translateY(-50%); /* Giúp mũi tên nằm chuẩn vị trí */
+    background: transparent;  /* Xóa nền xám mặc định của button */
+    border: none;            /* Xóa viền mặc định của button */
+    padding: 0;
+    outline: none;
+    color: #d4a359;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.subscribe-note {
+    font-size: 12px;
+    color: #bfae9f;
+    line-height: 1.5;
+    font-style: italic;
+    width: 85%;
+}
+
+/* ========================================== */
+/* CSS THÊM MỚI ĐỂ HIỂN THỊ POPUP THÀNH CÔNG */
+
+.custom-modal-overlay {
+    display: none; /* Mặc định ẩn */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-modal-content {
+    background-color: #FAF6F0; /* Màu nền kem nhạt như mẫu */
+    width: 90%;
+    max-width: 600px;
+    padding: 80px 40px;
+    position: relative;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.custom-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: transparent;
+    border: none;
+    font-size: 26px;
+    color: #655E57;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.custom-success-message {
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #B2915A; /* Màu vàng đất đặc trưng của Cocoon */
+    margin: 0;
+}
+
+/* Class điều khiển bật popup lên màn hình */
+.custom-modal-overlay.is-visible {
+    display: flex !important;
+}
+
+/* ========================================== */
+/* DÁN THÊM ĐOẠN CSS POPUP THUẦN NÀY XUỐNG DƯỚI CÙNG */
+
+.custom-modal-overlay {
+    display: none; /* Mặc định ẩn popup */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-modal-content {
+    background-color: #FAF6F0; /* Màu nền kem nhạt */
+    width: 90%;
+    max-width: 600px;
+    padding: 80px 40px;
+    position: relative;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.custom-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 26px;
+    color: #655E57;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.custom-success-message {
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #B2915A; /* Màu vàng đất đặc trưng của Cocoon */
+    margin: 0;
+}
+
+/* KHÔNG CẦN JS - ĐÂY LÀ PHẦN TỰ ĐỘNG BẬT POPUP KHI CHECKBOX ĐƯỢC TÍCH HOẠT */
+#popup-toggle:checked ~ .custom-modal-overlay {
+    display: flex;
+}
+
+/* Khối các cột danh mục bên phải */
+.links-block {
+    display: inline-block;
+    width: 58%;
+    vertical-align: top;
+    text-align: left;
+}
+
+.link-column {
+    display: inline-block;
+    width: 38%;
+    vertical-align: top;
+    margin-bottom: 30px;
+}
+
+.link-column .column-half {
+    width: 19%; /* Chia đôi cho cột Về Cocoon và Mạng xã hội */
+}
+
+.links-block h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #201c19;
+}
+
+.links-block ul {
+    list-style: none;
+}
+
+.links-block ul li {
+    margin-bottom: 10px;
+}
+
+.links-block ul li a {
+    text-decoration: none;
+    font-size: 13.5px;
+    color: #555555;
+    transition: color 0.2s;
+}
+
+.links-block ul li a:hover {
+    color: #d4a359;
+}
+
+.arrow-diagonal {
+    font-size: 10px;
+    color: #999;
+}
+
+/* =================================================== */
+/* CẤU HÌNH BANNER ĐỒNG BỘ - GIỮ NGUYÊN BẢN 100% ẢNH GỐC */
+
+/* Khung bọc lớn chia đôi màn hình */
+.cocoon-rose-premium-banner {
+    display: flex;
+    width: 100%;
+    background-color: #FAF6F0; /* Màu nền kem nhã nhặn bao quanh */
+    box-sizing: border-box;
+    align-items: center;        /* Căn giữa cả ảnh và chữ theo chiều dọc */
+    justify-content: center;
+    padding: 50px 4%;           /* Tạo khoảng cách thở sang trọng với các phần khác */
+}
+
+/* KHỐI CHỨA ẢNH BÊN TRÁI: Tự động co giãn theo hình dáng thật của ảnh */
+.rose-premium-img-container {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;   /* Luôn giữ ảnh nằm căn lề chuẩn */
+    align-items: center;
+}
+
+/* THẺ ẢNH CHÍNH XÁC: Không cắt, không bóp méo, giữ nguyên góc bo */
+.rose-premium-img-container .rose-premium-img {
+    width: 100%;
+    max-width: 500px;           /* Giới hạn độ lớn vừa tầm mắt nhìn */
+    height: auto;               /* Ép chiều cao tự động chạy theo tỷ lệ gốc */
+    object-fit: normal;         /* Trả về thuộc tính hiển thị mặc định, không can thiệp cắt xén */
+    display: block;
+}
+
+/* KHỐI CHỨA CHỮ BÊN PHẢI: Được đưa vào trong, căn lề thẳng hàng gọn gàng */
+.rose-premium-text-container {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    align-items: center;        /* Căn chữ nằm giữa theo chiều dọc so với ảnh */
+    justify-content: flex-start;
+    padding-left: 6%;           /* Đẩy khối chữ lùi sâu vào trong một khoảng tinh tế */
+    box-sizing: border-box;
+}
+
+/* Hộp nội dung chữ */
+.rose-premium-box {
+    width: 100%;
+    max-width: 440px;           /* Khống chế chữ không bị bè dòng quá dài */
+    text-align: left;
+}
+
+/* --- HỆ FONT CHỮ CẢI TIẾN: SANG TRỌNG VÀ TINH TẾ --- */
+.rose-p-subtitle {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px; /* Giúp giãn cách các chữ rộng ra đúng tinh thần tối giản */
+    color: #a3636b;
+}
+
+.rose-p-title {
+    font-family: 'Playfair Display', 'Times New Roman', serif; /* Font có chân thanh lịch */
+    font-size: 50px;
+    font-weight: 500;
+    color: #a3636b;
+    line-height: 1.25;
+    margin-bottom: 25px;
+}
+
+.rose-p-desc {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 15px;
+    color: #a3636b;             /* Nâu đất đậm rất dễ đọc */
+    line-height: 1.65;
+    margin-bottom: 15px;
+}
+
+.rose-p-meta {
+    display: block;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 12px;
+    color: #1a1613;
+    margin-bottom: 35px;
+}
+
+/* Nút bấm XEM NGAY đồng bộ */
+.btn-rose-p-explore {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+    padding: 14px 20px;
+    background-color: #b2915a;  /* Màu vàng đất Cocoon */
+    color: #FFFFFF;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-rose-p-explore .arrow {
+    font-size: 14px;
+    transition: transform 0.2s ease;
+}
+
+.btn-rose-p-explore:hover {
+    background-color: #1a1613;  /* Chuyển đen sang trọng khi di chuột */
+    cursor: pointer;
+}
+
+.btn-rose-p-explore:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* ========================================== */
+/* STYLING PHẦN 2: NỀN NÂU ĐEN (IMAGE_D6DBC8.PNG) */
+.footer-section-bottom {
+    background-color: #1a1613; /* Màu nâu đen vỏ cây */
+    position: relative;
+    padding: 50px 0 35px 0;
+}
+
+/* Viền răng cưa uốn lượn màu vàng đất trên đỉnh phần 2 */
+.footer-wave-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #d4a359;
+    clip-path: polygon(0% 20%, 5% 80%, 10% 40%, 15% 85%, 20% 30%, 25% 75%, 30% 50%, 35% 80%, 40% 45%, 45% 90%, 50% 35%, 55% 70%, 60% 40%, 65% 85%, 70% 30%, 75% 75%, 80% 50%, 85% 80%, 90% 45%, 95% 70%, 100% 20%, 100% 100%, 0% 100%);
+}
+
+.legal-info {
+    width: 75%;
+    display: inline-block;
+    text-align: left;
+}
+
+.legal-info h3 {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    color: #dfb26c; /* Chữ tiêu đề màu vàng đất hẹp */
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.legal-info h3.space-top {
+    margin-top: 20px;
+}
+
+.legal-info p {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 12.5px;
+    color: #bfae9f; /* Màu chữ thông tin */
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+}
+
+/* Nhãn Bộ Công Thương mô phỏng */
+.bct-wrapper {
+    margin-top: 15px;
+}
+
+.bct-badge-custom {
+    display: inline-block;
+    background-color: #0072bc;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    border: 2px solid #fff;
+}
+
+.bct-badge-custom span {
+    display: block;
+    font-size: 8px;
+    font-weight: normal;
+}
+
+/* Định vị nút Liên hệ bo tròn lớn bên phải */
+.fixed-contact-box {
+    width: 24%;
+    display: inline-block;
+    text-align: right;
+    vertical-align: bottom;
+    padding-bottom: 25px;
+}
+
+.btn-cocoon-contact {
+    display: inline-block;
+    background-color: #fffaf4; /* Trắng kem */
+    color: #a4763d; /* Chữ nâu vàng */
+    font-size: 15px;
+    font-weight: bold;
+    padding: 16px 42px;
+    border-radius: 35px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+}
+
+.btn-cocoon-contact:hover {
+    transform: scale(1.05);
+}
+
+/* Bản quyền */
+.legal-copyright {
+    margin-top: 25px;
+    border-top: 1px solid #2b2520;
+    padding-top: 15px;
+    text-align: left;
+}
+
+.legal-copyright p {
+    font-size: 12px;
+    color: #5a5149;
+}
+
+/* ========================================== */
+/* CSS CHO TRANG DANH SÁCH SẢN PHẨM (SANPHAM.HTML) */
+
+.product-page-content {
+    background-color: #faf6f0; /* Nền kem đồng bộ phong cách Cocoon */
+    padding: 60px 0;
+    min-height: 60vh;
+}
+
+.page-title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 28px;
+    color: #201c19;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* Lưới chứa sản phẩm chia làm 4 cột đều nhau */
+.cocoon-product-grid {
+    text-align: left;
+}
+
+.cocoon-product-card {
+    display: inline-block;
+    width: 23%; /* Chiếm gần 1/4 chiều ngang */
+    margin-right: 2%;
+    background-color: #ffffff;
+    border: 1px solid #e8e2da;
+    padding: 15px;
+    vertical-align: top;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Bỏ căn lề phải cho sản phẩm cuối hàng */
+.cocoon-product-card:nth-child(4n) {
+    margin-right: 0;
+}
+
+.cocoon-product-card:hover {
+    box-shadow: 0 5px 15px rgba(32, 28, 25, 0.08);
+}
+
+/* Khung ảnh sản phẩm */
+.p-img-box {
+    position: relative;
+    background-color: #f7f3ed;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+/* Nhãn Thuần chay nhỏ ở góc ảnh */
+.p-tag-vegan {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #2e4334;
+    color: #dfb26c;
+    font-size: 10px;
+    padding: 3px 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Icon giả lập thay cho hình ảnh thật */
+.p-placeholder-img {
+    font-size: 50px;
+}
+
+/* Tiêu đề sản phẩm */
+.p-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #201c19;
+    line-height: 1.4;
+    height: 40px; /* Giới hạn chiều cao để các thẻ đều nhau */
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+/* Mô tả ngắn */
+.p-desc {
+    font-size: 12px;
+    color: #777777;
+    margin-bottom: 12px;
+    height: 32px;
+    overflow: hidden;
+}
+
+/* Giá tiền màu vàng nghệ */
+.p-price {
+    font-size: 15px;
+    font-weight: bold;
+    color: #cb9a4a;
+    margin-bottom: 15px;
+}
+
+/* Nút thêm vào giỏ hàng */
+.btn-add-to-cart {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #201c19;
+    color: #201c19;
+    padding: 10px 0;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-add-to-cart:hover {
+    background-color: #201c19;
+    color: #ffffff;
+}
